@@ -2,6 +2,7 @@
 version: '3'
 services:
     laravel.api.backend.estudo:
+        container_name: api.backend.laravel
         build:
             context: ./vendor/laravel/sail/runtimes/8.0
             dockerfile: Dockerfile
@@ -23,6 +24,7 @@ services:
             # - meilisearch
             # - selenium
     mysql.api.backend.estudo:
+        container_name: 'mysql.laravel.api'
         image: 'mysql:8.0'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
